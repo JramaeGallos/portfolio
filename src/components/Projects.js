@@ -10,6 +10,12 @@ import ticImg3 from "../assets/img/tic_img3.png";
 import lmaoImg1 from "../assets/img/lmao_img1.png";
 import lmaoImg2 from "../assets/img/lmao_img2.png";
 import lmaoImg3 from "../assets/img/lmao_img3.png";
+import elicomLogin from "../assets/img/elicom_login.png"
+import elicomStudent from "../assets/img/elicom_student.png"
+import elicomRegistrar from "../assets/img/elicom_registrar.png"
+import elicomInstructor from "../assets/img/elicom_instructor.png"
+import elicomClearance from "../assets/img/elicom_clearance.png"
+import elicomDashboard from "../assets/img/elicom_dashboard.png"
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -28,6 +34,15 @@ export const Projects = () => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+  const elicomProjects = [
+    { title: "Login Page", description: "General view where users can login the app using their credentials.", imgUrl: elicomLogin },
+    { title: "Dashboard Page", description: "General view where users can view the current enrollment status set by the registrar.", imgUrl: elicomDashboard },
+    { title: "Student View", description: "Student can view their clearance status.", imgUrl: elicomStudent },
+    { title: "Instructor View", description: "Instructor can view and set the clearance status of their students", imgUrl: elicomInstructor },
+    { title: "Clearance Personnel View", description: "Clearance personnel can view and set the clearance status of students", imgUrl: elicomClearance },
+    { title: "Registrar View", description: "Registrar is the overall administrator of the application and has absolute access in the system.", imgUrl: elicomRegistrar }
+  ];
 
   const SW_projects = [
     { title: "Menu Page", description: "Player can choose to start a new game or read game background.", imgUrl: swImg1 },
@@ -79,6 +94,22 @@ export const Projects = () => {
                       </Nav.Item>
                     </Nav>
                     <Tab.Content className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                    <Tab.Pane eventKey="first">
+                        <Row>
+                          <p>A full stack web app developed using ReactJS, ExpressJS, and MySQL. eLICOM is a 
+                            pre-enrollment system designed for use in Libon Community College, Libon, Albay.
+                          </p>
+                        </Row>
+                        <Row>
+                          {elicomProjects.map((project, index) => (
+                            <ProjectCard
+                              key={index}
+                              {...project}
+                              onClick={() => handleShowModal(project.imgUrl, project.description)}
+                            />
+                          ))}
+                        </Row>
+                      </Tab.Pane>
                       <Tab.Pane eventKey="second">
                         <Row>
                           <p>A shooting game developed in JAVA using the concept of OOP.</p>
@@ -119,6 +150,16 @@ export const Projects = () => {
                               onClick={() => handleShowModal(project.imgUrl, project.description)}
                             />
                           ))}
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="fifth">
+                        <Row>
+                          <p>A multiple player game developed using Java that applies the concept of data networking across different devices.</p>
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="sixth">
+                        <Row>
+                          <p>A mobile application developed using flutter that imitates the social network of facebook but uses the To Do List features.</p>
                         </Row>
                       </Tab.Pane>
                     </Tab.Content>

@@ -58,7 +58,7 @@ export const Banner = () => {
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm Jramae`}</h1>
                 <h2>{`I am a`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Developer", "Web Designer", "Project Manager" ]'><span className="wrap">{text}</span></span></h2>
-                  <p>I hold a Bachelors degree in Computer Science from the University of the Philippines Los Baños, where I graduated as Cum Laude and received academic recognition as DOST-SEI scholar and Phi Kappa Phi Honor Society nominee.</p>
+                  <p>I am a Junior Software Developer. I hold a Bachelors degree in Computer Science from the University of the Philippines Los Baños, where I graduated as Cum Laude and received academic recognition as DOST-SEI scholar and Phi Kappa Phi Honor Society nominee.</p>
                   {/* <p>I worked closely with software development in full stack application development. I have a good programming background in Python, Java, and Java Script development. I am interested in algorithms, artificial intelligence, and data structures.</p> */}
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}

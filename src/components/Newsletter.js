@@ -27,13 +27,6 @@ export const Newsletter = () => {
   return (
     <Col lg={12}>
       <div className="newsletter-bx wow slideInUp">
-        {/* Notification Alert */}
-        {showAlert && (
-          <Alert variant="success" className="download-alert" aria-live="polite">
-            CV Downloaded Successfully!
-          </Alert>
-        )}
-
         <Row className="newsletter-content">
           <Col lg={12} className="newsletter-text">
             <h3>Know more about me by looking at my CV</h3>

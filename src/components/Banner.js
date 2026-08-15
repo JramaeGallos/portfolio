@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Software Developer", "Web Designer"  ];
+  const toRotate = [ "Software Engineer" ];
   const period = 2000;
 
   useEffect(() => {
@@ -58,8 +58,10 @@ export const Banner = () => {
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm Jramae`}</h1>
                 <h2>{`I am a`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Developer", "Web Designer", "Project Manager" ]'><span className="wrap">{text}</span></span></h2>
-                  <p>I am a Junior Software Developer. I hold a Bachelors degree in Computer Science from the University of the Philippines Los Baños, where I graduated as Cum Laude and received academic recognition as DOST-SEI scholar and Phi Kappa Phi Honor Society nominee.</p>
-                  {/* <p>I worked closely with software development in full stack application development. I have a good programming background in Python, Java, and Java Script development. I am interested in algorithms, artificial intelligence, and data structures.</p> */}
+                  <p>I am a Full Stack Software Engineer with a Bachelor’s degree in Computer Science from the University of the
+                    Philippines Los Baños and currently pursuing a Master’s degree in Information Systems at the University
+                    of the Philippines Open University.</p>
+                  <p>I am experienced in designing and developing enterprise applications across database architecture, backend services, and frontend development, leveraging modern technologies and development practices. I am passionate about AI research and development, particularly the integration of LLMs and AI technologies into practical applications.</p>
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>

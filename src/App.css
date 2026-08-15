@@ -434,10 +434,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
   border-radius: 30px;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin: 0 auto 24px;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  width: 330px; 
-  height: 230px; 
+  width: 100%;
+  max-width: 330px;
+  height: 230px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -610,6 +611,35 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact form button:hover::before {
   width: 100%;
 }
+.contact form .form-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 10px 0 0;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  color: #fff;
+}
+.contact form .form-message .form-message-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.contact form .form-message .form-message-icon.success-icon {
+  color: #4ade80;
+}
+.contact form .form-message .form-message-icon.danger-icon {
+  color: #ef4444;
+}
+.contact form .form-error {
+  display: block;
+  width: 100%;
+  margin: -4px 0 10px;
+  padding-left: 12px;
+  font-size: 13px;
+  color: #ff6b6b;
+  letter-spacing: 0.4px;
+}
 
 /************ Footer Css ************/
 .footer {
@@ -657,6 +687,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .newsletter-button {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 /* Button styles */
@@ -680,24 +711,64 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .download-alert {
   position: absolute;
-  top: 10px;
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
-  width: auto;
-  padding: 10px 20px;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 90%;
+  margin: 0;
+  padding: 8px 16px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
   z-index: 1000;
   text-align: center;
 }
 
 /* Responsive Design */
 
+/* Tablets */
+@media (max-width: 991px) {
+  .project .nav.nav-pills {
+    width: 100%;
+  }
+}
+
 /* Small Screens (Phones) */
 @media (max-width: 768px) {
   .newsletter-bx {
     padding: 40px 20px;
+  }
+
+  .project .nav.nav-pills {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .project .nav.nav-pills .nav-item {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .project .nav.nav-pills .nav-link {
+    font-size: 15px;
+    padding: 14px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .nav-link#projects-tabs-tab-first {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .nav-link#projects-tabs-tab-sixth {
+    border-radius: 0 0 20px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .nav-link#projects-tabs-tab-third,
+  .nav-link#projects-tabs-tab-fourth {
+    border-radius: 0;
   }
 
   /* Stack text and button vertically on small screens */

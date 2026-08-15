@@ -4,6 +4,7 @@ import contactImg from "../assets/img/contact-img.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { sendEmail } from "../server";
+import { CheckCircleFill, XCircleFill } from 'react-bootstrap-icons';
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -16,16 +17,44 @@ export const Contact = () => {
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
   const [status, setStatus] = useState({});
+  const [formErrors, setFormErrors] = useState({});
 
   const onFormUpdate = (category, value) => {
       setFormDetails({
         ...formDetails,
         [category]: value
       })
+      if (formErrors[category]) {
+        setFormErrors((prev) => ({ ...prev, [category]: "" }));
+      }
   }
 
-  const handleSubmit = async (e) => {
+  const validate = () => {
+    const errors = {};
+    if (!formDetails.firstName.trim()) {
+      errors.firstName = "First name is required.";
+    }
+    if (!formDetails.lastName.trim()) {
+      errors.lastName = "Last name is required.";
+    }
+    if (!formDetails.email.trim()) {
+      errors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formDetails.email.trim())) {
+      errors.email = "Please enter a valid email address.";
+    }
+    if (!formDetails.phone.trim()) {
+      errors.phone = "Phone number is required.";
+    }
+    return errors;
+  }
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    const errors = validate();
+    setFormErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      return;
+    }
     setButtonText("Sending...");
     sendEmail(formDetails)
         .then(() => {
@@ -35,8 +64,11 @@ export const Contact = () => {
           setTimeout(() => setStatus({}), 5000);
         })
         .catch((error) => {
-          alert("Error Sending Email: " + error);
-          setStatus({ success: false, message: 'Something went wrong, please try again later.' });
+          console.error("Email send failed:", error);
+          setButtonText("Send");
+          const message = "Sending email is not supported at this time.";
+          alert(message);
+          setStatus({ success: false, message });
           setTimeout(() => setStatus({}), 5000);
         });
   }
@@ -57,30 +89,37 @@ export const Contact = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <h2>Get In Touch</h2>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} noValidate>
                   <Row>
                     <Col size={12} sm={6} className="px-1">
                       <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value.toUpperCase())} />
+                      {formErrors.firstName && <p className="form-error">{formErrors.firstName}</p>}
                     </Col>
                     <Col size={12} sm={6} className="px-1">
                       <input type="text" value={formDetails.lastName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value.toUpperCase())}/>
+                      {formErrors.lastName && <p className="form-error">{formErrors.lastName}</p>}
                     </Col>
                     <Col size={12} sm={6} className="px-1">
                       <input type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
+                      {formErrors.email && <p className="form-error">{formErrors.email}</p>}
                     </Col>
                     <Col size={12} sm={6} className="px-1">
                       <input type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)}/>
+                      {formErrors.phone && <p className="form-error">{formErrors.phone}</p>}
                     </Col>
                     <Col size={12} className="px-1">
                       <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
                       <button type="submit"><span>{buttonText}</span></button>
+                      {
+                        status.message &&
+                        <p className="form-message">
+                          {status.success === false
+                            ? <XCircleFill className="form-message-icon danger-icon" />
+                            : <CheckCircleFill className="form-message-icon success-icon" />}
+                          <span>{status.message}</span>
+                        </p>
+                      }
                     </Col>
-                    {
-                      status.message &&
-                      <Col>
-                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                      </Col>
-                    }
                   </Row>
                 </form>
               </div>}

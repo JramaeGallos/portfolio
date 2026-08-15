@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.54696a75.css",
-    "main.js": "/portfolio/static/js/main.b33883c3.js",
+    "main.css": "/portfolio/static/css/main.f4933c48.css",
+    "main.js": "/portfolio/static/js/main.582826a8.js",
     "static/js/787.fb771931.chunk.js": "/portfolio/static/js/787.fb771931.chunk.js",
     "static/media/color-sharp.png": "/portfolio/static/media/color-sharp.bea361cfef80fefc2d1e.png",
     "static/media/color-sharp2.png": "/portfolio/static/media/color-sharp2.c87586c6c2f549cb4aa6.png",
@@ -10,6 +10,7 @@
     "static/media/sw_menu.png": "/portfolio/static/media/sw_menu.13f61bd0ed083af06a61.png",
     "static/media/contact-img.png": "/portfolio/static/media/contact-img.b93d03e39fbb00a770ca.png",
     "static/media/banner-bg.png": "/portfolio/static/media/banner-bg.cc1273af450504afe755.png",
+    "static/media/meter2.png": "/portfolio/static/media/meter2.62cc2f7726da713098c8.png",
     "static/media/elicom_registrar.png": "/portfolio/static/media/elicom_registrar.34a47a5a516870c4ee68.png",
     "static/media/meter8.png": "/portfolio/static/media/meter8.1c8bcadff172ad489a95.png",
     "static/media/meter7.png": "/portfolio/static/media/meter7.a30d13c42fc316bde264.png",
@@ -20,12 +21,11 @@
     "static/media/elicom_login.png": "/portfolio/static/media/elicom_login.9f891013ed34a82f7bef.png",
     "static/media/meter11.png": "/portfolio/static/media/meter11.a4bd56197b697c4880cb.png",
     "static/media/elicom_instructor.png": "/portfolio/static/media/elicom_instructor.9ff4df0e04ddc6f016ac.png",
-    "static/media/meter5.png": "/portfolio/static/media/meter5.2071cd8c32e1987afb05.png",
     "static/media/meter1.png": "/portfolio/static/media/meter1.4be11f514d9f241d95ef.png",
     "static/media/meter12.png": "/portfolio/static/media/meter12.07df7b137de9717fa421.png",
-    "static/media/meter2.png": "/portfolio/static/media/meter2.b699735555a2ed8ff949.png",
     "static/media/meter3.png": "/portfolio/static/media/meter3.b6aaf784e5e5e64c7533.png",
     "static/media/meter6.png": "/portfolio/static/media/meter6.01fa6fac269f95746c0f.png",
+    "static/media/meter5.png": "/portfolio/static/media/meter5.f08b6fc77dd74074a6b4.png",
     "static/media/elicom_student.png": "/portfolio/static/media/elicom_student.7d0940b4d52264bc8fba.png",
     "static/media/CentraNo2-Bold.ttf": "/portfolio/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/portfolio/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
@@ -48,12 +48,12 @@
     "index.html": "/portfolio/index.html",
     "static/media/arrow2.svg": "/portfolio/static/media/arrow2.3d9522b6fd8f2464b7200ebf2c1bb09a.svg",
     "static/media/arrow1.svg": "/portfolio/static/media/arrow1.0c89b5b635adf255c2822c630aaa6ccf.svg",
-    "main.54696a75.css.map": "/portfolio/static/css/main.54696a75.css.map",
-    "main.b33883c3.js.map": "/portfolio/static/js/main.b33883c3.js.map",
+    "main.f4933c48.css.map": "/portfolio/static/css/main.f4933c48.css.map",
+    "main.582826a8.js.map": "/portfolio/static/js/main.582826a8.js.map",
     "787.fb771931.chunk.js.map": "/portfolio/static/js/787.fb771931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.54696a75.css",
-    "static/js/main.b33883c3.js"
+    "static/css/main.f4933c48.css",
+    "static/js/main.582826a8.js"
   ]
 }

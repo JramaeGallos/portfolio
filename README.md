@@ -1,6 +1,11 @@
 Available At: https://jramaegallos.github.io/portfolio/
 
 Deployment Guide: https://www.youtube.com/watch?v=7wzuievFjrk
+To deploy:
+Commit and push to main
+npm install gh-pages --save-dev 
+npm run deploy
+
 # Personal Portfolio Website in React
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
